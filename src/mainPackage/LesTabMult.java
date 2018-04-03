@@ -1,7 +1,10 @@
 
 package mainPackage;
 
-
+/**
+ * Class used for calculate a magic square
+ * @author sire_marcos
+ */
 public class LesTabMult
 {
     private int matrice [][];
@@ -110,40 +113,5 @@ public class LesTabMult
             }
         return true;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
 }
