@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mainPackage;
 
 
 /**
- *
+ * Class used for calculate a string more frequent
  * @author sire_marcos
  */
 public class LesChainesDesCaracteres
@@ -16,7 +12,12 @@ public class LesChainesDesCaracteres
     public LesChainesDesCaracteres()
     {
     }
-    
+    /**
+     * Method that split a phrase and it compare within to count the word more 
+     * frequent
+     * @param phrase
+     * @return a word more frequent into a phrase.
+     */
     public String motMode(String phrase)
     {
         int count = 0, plusGrand = 0;

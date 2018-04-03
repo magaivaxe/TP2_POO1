@@ -1,19 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mainPackage;
 
-/**
- *
- * @author sire_marcos
- */
+
 public class LesTabMult
 {
     private int matrice [][];
     private int ordre, n2, sommeMag;
     
+    /**
+     * Constructor that receives a matrix and calculate the order, max value
+     * number (n2) and magic sum by matrix order.
+     * @param matrice matrix type magic square to analyze
+     */
     public LesTabMult(int [][] matrice)
     {
         this.matrice = matrice;
@@ -22,11 +20,19 @@ public class LesTabMult
         this.sommeMag = ordre * (ordre * ordre + 1) / 2;
     }
     
+    /**
+     * 
+     * @return true if is magic else false
+     */
     public boolean estMagique()
     {
         return (repetition() && someMagique());
     }
-    
+    /**
+     * 
+     * @return true if it don't exist repetition in matrix by magic square
+     * definition
+     */
     private boolean repetition()
     {
         int count = 0;
@@ -46,7 +52,11 @@ public class LesTabMult
         }
         return count != n2;
     }
-    
+    /**
+     * 
+     * @return true if the columns, ranges and diagonals sums are equals to 
+     * sommeMag value.
+     */
     private boolean someMagique()
     {
         int sommeRange = 0, sommeColonne = 0, sommeDiagP = 0, sommeDiagS = 0;
