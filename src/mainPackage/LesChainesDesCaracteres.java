@@ -36,7 +36,6 @@ public class LesChainesDesCaracteres
                 plusGrand = count;
                 stringToReturn = str2;
                 }
-                System.out.println(str1 + "\t" + str2 + "\n" + count);
             }
             count = 0;
         }

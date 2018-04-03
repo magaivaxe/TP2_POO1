@@ -12,15 +12,14 @@ package mainPackage;
 public class LesTabMult
 {
     private int matrice [][];
-    private int ordre, n2, sommeMag, sommeMagRange;
+    private int ordre, n2, sommeMag;
     
     public LesTabMult(int [][] matrice)
     {
         this.matrice = matrice;
         this.ordre = matrice.length;
         this.n2 = ordre * ordre;
-        this.sommeMag = ordre * (ordre + 1) / 2;
-        this.sommeMagRange = sommeMag / ordre;
+        this.sommeMag = ordre * (ordre * ordre + 1) / 2;
     }
     
     public boolean estMagique()
@@ -58,8 +57,9 @@ public class LesTabMult
             {
                 sommeRange += matrice[i][j];
             }
-            if (sommeRange != sommeMagRange)
+            if (sommeRange != sommeMag)
             {
+                System.out.println(1);
                 return false;
             }
             sommeRange = 0;
@@ -71,15 +71,17 @@ public class LesTabMult
             {
                 sommeColonne += matrice[j][i];
             }
-            if (sommeColonne != sommeMagRange)
+            if (sommeColonne != sommeMag)
             {
-            return false;
+                System.out.println(2);
+                return false;
             }
+            sommeColonne = 0;
         }
         //boucles pour check la somme des diagonales
         for (int i = 0; i < ordre; i++)
         {
-            for (int j = 0; j < matrice[i].length; j++)
+            for (int j = 0; j < ordre; j++)
             {
                 if (i == j)
                 {
@@ -90,11 +92,12 @@ public class LesTabMult
                     sommeDiagS += matrice[i][j];
                 }
             }
-            if (sommeDiagP != sommeMagRange || sommeDiagS != sommeMagRange)
-            {
-            return false;
-            }
         }
+        if (sommeDiagP != sommeMag || sommeDiagS != sommeMag)
+            {
+                System.out.println(sommeDiagP + "\t" + sommeDiagS);
+                return false;
+            }
         return true;
     }
     
